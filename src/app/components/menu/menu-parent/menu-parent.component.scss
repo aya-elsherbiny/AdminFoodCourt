@@ -1,0 +1,45 @@
+h3{
+    margin-right: 15px;
+    color:#3a3d3b;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container{
+    font-family: 'Roboto', sans-serif;
+}
+option{
+    color:#3a3d3b;
+}
+.CatBtn {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+    color:#fd8709;
+    border: 2px solid #fd8709; 
+    outline: none;
+    width:150px;
+    font-size: larger;
+    font-weight:bold;
+    transition: 0.3s;
+}
+.CatBtn:hover{
+    cursor: pointer;
+    background-color:#fd8709 ;
+    color: #fff;
+    font-weight:bold;
+    box-shadow: 0 12px 12px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.CatBtn:focus{
+    background-color: #fd8709;
+    color: #fff;
+    outline: none;
+    font-weight:bold;
+}
+.headerElement{
+    font-family: 'Roboto', sans-serif;
+    color:#fd8709;
+}
+#subTitle{
+    color:#3a3d3b;
+    margin-top: 20px;
+}

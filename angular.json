@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "foodcourtAdmin"
+  "defaultProject": "foodcourtAdmin",
+  "cli": {
+    "analytics": "7c1ba3e6-054c-4bdf-9767-ed926a73e672"
+  }
 }

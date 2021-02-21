@@ -1,0 +1,22 @@
+<body>
+    <!-- Viewing chef information -->
+      <div class="container" style="margin-top:100px;">
+        <div class="row" >  
+            <img class="card-img-top rounded-circle img-fluid col-3 " [src]="chef?.image" alt="Card image cap">
+            <div class="col-7 ">
+                <br>
+                <h2 class="card-title ">{{chef?.name}}</h2>
+                <p class="card-title">{{chef?.description}}</p>
+                <a class="nav-link p-0" routerLink="/Chefs">See Other Chefs</a><br>
+                <!-- <ngb-rating [max]="5" [(rate)]="starRating" [readonly]="false"></ngb-rating> -->
+            </div>
+      </div>
+      <hr><br>
+      <!-- Viewing the chef dishes based on the chef id -->
+      <app-chef-dishes [InputChefID]="chef.id"></app-chef-dishes>
+     
+    </div>
+    
+    </body>
+    
+    

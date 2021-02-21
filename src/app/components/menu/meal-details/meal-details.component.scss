@@ -1,0 +1,38 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+h1{
+    color: #FD5602;
+    font-weight:bold;
+}
+h4{
+    color:#000000;
+}
+h5{
+    color: rgb(121, 121, 121);
+    
+}
+
+img{
+    border-radius: 30px;
+}
+
+.btn{
+    background-color:#FD5602; 
+    color:white; 
+    height:40px; 
+    width: 100px;
+    font-size: large;
+    transition: 0.3s;
+}
+.btn:hover {
+    background:#fd8709 ;
+    color: white;
+}
+ngb-rating{
+    color:#FFD700;
+    // color:#FFAF42;
+    font-size: larger;
+    outline:none;
+}

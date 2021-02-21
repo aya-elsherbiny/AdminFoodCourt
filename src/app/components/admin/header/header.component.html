@@ -1,0 +1,60 @@
+<header>
+    <nav class="navbar navbar-expand-md bg-light fixed-top">
+      <div class="container-fluid d-flex">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapsibleNavbar"
+          style="color: #ffaf42"
+        >
+          <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
+        </button>
+        <a class="navbar-brand mr-auto pl-3" routerLink="/Home"
+          ><img src="assets/3.png" style="height: 40px; width: 70px"
+        /></a>
+  
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav nav-pills nav-fill d-flex col-lg-12">
+            <li class="nav-item col-lg-3">
+              <a class="nav-link" aria-current="page" routerLink="/DashBoard">DashBoard</a>
+            </li>
+            <li class="nav-item col-lg-3">
+              <a class="nav-link" routerLink="/Home">User Home</a>
+            </li>
+            <li class="nav-item col-lg-3">
+              <a class="nav-link" routerLink="/MenuParent">Menu</a>
+            </li>
+            <li class="nav-item col-lg-3">
+              <a class="nav-link" routerLink="/Chefs">Chefs</a>
+            </li>
+            <li class="nav-item col-lg-3">
+              <a class="nav-link" routerLink="/Offers">Offers</a>
+            </li>
+            <li class="nav-item col-lg-3">
+              <a class="nav-link" routerLink="/Blog">Blog</a>
+            </li>
+            <li class="nav-item col-lg-3">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fa fa-user" style="font-size: x-large"></i>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" routerLink="/LogIn">Login</a>
+                <!-- <a class="dropdown-item" routerLink="/Signup">SignUp</a>
+                <a class="dropdown-item" routerLink="/Admin">Admin</a> -->
+                <a class="dropdown-item" (click)="logout()">Log Out</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>

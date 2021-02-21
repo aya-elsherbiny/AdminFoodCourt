@@ -1,0 +1,26 @@
+<!-- Viewing meals of the selected category as cards -->
+<br>
+<div class="container-fluid justify-content-center ">
+    <div class="row justify-content-center ">
+        <div class="col-sm-10 col-xs-12 col-xl-3 col-lg-4 col-md-4 rounded card text-center card-light" style="margin:20px; border-color: white;" *ngFor = "let meal of MealsList" >
+            <div class="img__wrap">
+                <img [src]="meal?.image" class="rounded-corners card-img-top img__img">
+                
+                <div class="img__description">{{meal?.description}} <br>
+                    <button style="color: white; text-align:center" type="button" class="btn btn-link" (click)="viewDetails(meal.id)"> More details</button>
+                </div>
+            </div>
+            
+            <div class="card-body">
+                
+                <h2 class="card-title text-center">{{meal?.name}}</h2>
+                
+                <div class="container d-flex flex-row justify-content-between col-6">
+                    <h5 class="card-text text-center prices">{{meal?.price|currency:'EGP'}}</h5>
+                    <!-- <i class="fas fa-shopping-cart" (click)="add(meal.image,meal.id,meal.name,meal.price,meal.description)" data-toggle="modal" data-target="#myModal"></i> -->
+                </div>
+  
+            </div>
+        </div>
+    </div>
+</div>

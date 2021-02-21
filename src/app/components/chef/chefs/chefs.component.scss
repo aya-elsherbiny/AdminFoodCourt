@@ -1,0 +1,48 @@
+
+img{
+    width: 100%;
+}
+#ourChefs {
+    font-size: 50px;
+    font-weight: bold;
+    color: #fd5602;
+    margin-top: 95px;
+    font-family:'Roboto', sans-serif;
+
+}
+
+h3{
+    font-weight:600;
+    color:#FD5602;
+}
+.chefN {
+    color: #FD5602;
+}
+  /* relevant styles */
+  .img__wrap {
+    position: relative;
+  }
+  
+  .img__description {
+    position: absolute;
+    top: 0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    padding:30% 5% 20% 5%;
+    background: rgba(217, 205, 189, 0.6);
+    color:#852600;;
+    visibility: hidden;
+    opacity: 0;
+    font-size: 25px;
+    font-weight:600;
+    text-decoration: none;
+    /* transition effect. not necessary */
+    transition: opacity .2s, visibility .2s;
+  }
+  
+  .img__wrap:hover .img__description {
+    visibility: visible;
+    opacity: 1;
+    width: 100%;
+  }
