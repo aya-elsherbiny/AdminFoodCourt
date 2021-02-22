@@ -37,6 +37,7 @@ export class MenuService {
       chef: Number(meal.chef),
       category: Number(meal.category),
       price:Number(meal.price),
+      description:meal.description,
       image: meal.image,
       show: meal.show,
       discount: meal.discount
@@ -47,6 +48,18 @@ export class MenuService {
     this.afs.doc(`meals/${mID}`).delete();
   }
   updateMeal(meal:Imeal){
-    this.afs.doc(`meals/${meal.id}`).update(meal);
+    // this.afs.doc(`meals/${meal.id}`).update(meal);
+    this.afs.collection("meals").doc(`${meal.id}`).set({
+      id: Number(meal.id),
+      name: meal.name,
+      chef: Number(meal.chef),
+      category: Number(meal.category),
+      price:Number(meal.price),
+      description:meal.description,
+      image: meal.image,
+      show: meal.show,
+      discount: meal.discount
+    }
+    )
   }
 }
