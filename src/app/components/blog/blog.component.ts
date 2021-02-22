@@ -8,26 +8,12 @@ import { BlogService } from 'src/app/blog.service';
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent implements OnInit {
-  loginFrm:FormGroup;
+
   AllPosts: any[]=[];
   AllComments:any[]=[];
   constructor(private fb:FormBuilder, private blog:BlogService) {
-    this.loginFrm=this.fb.group({
-      Name:['',[Validators.required,Validators.minLength(3)]],
-      Email:['',[Validators.required,Validators.email]],
-      // Phone:['',[Validators.required,Validators.pattern('^01[0-2]{1}[0-9]{8}')]],
-    })
    }
-   get Name(){
-    return this.loginFrm.get('Name');
-  }
- 
-  get Email(){
-    return this.loginFrm.get('Email');
-  }
-  onSubmit() {
-    console.warn(this.loginFrm.value);
-  }
+  
   ngOnInit(): void {
     this.getAllPosts();
     this.getAllComments();

@@ -63,14 +63,21 @@ hr{
 //     transition: 0.3s;
 //     text-decoration: none;
 // }
-
+.addPost{
+    text-decoration: none;
+    margin-top:20px;
+    color: #fd5602;
+    font-size: large;
+}
 .form_title {
     margin-bottom: 50px;
     margin-left: 8%;
     text-transform: uppercase;
 
 }
-
+.img__wrap {
+    position: relative;
+  }
 .food_btn {
     
     font-size: 18px;
