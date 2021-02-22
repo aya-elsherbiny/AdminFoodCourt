@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AddPostComponent } from './components/add-post/add-post.component';
 import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
 import { HomeComponent } from './components/admin/home/home.component';
 import { LoginComponent } from './components/admin/login/login.component';
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path:'LogIn', component:LoginComponent},
   {path:'Dishes/:cID',component:ChefDishesComponent},
   {path: 'Blog', component:BlogComponent},
+  {path: 'AddPost', component:AddPostComponent},
   {path:'MealDetails/:mID', component:MealDetailsComponent},
   {path: 'MenuParent', component:MenuParentComponent},
   {path: 'AddMeal', component:AddMealComponent},

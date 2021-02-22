@@ -24,7 +24,9 @@ import { MealDetailsComponent } from './components/menu/meal-details/meal-detail
 import { HomeComponent } from './components/admin/home/home.component';
 import { OffersComponent } from './components/admin/offers/offers.component';
 import { LoginComponent } from './components/admin/login/login.component';
+
 import { AddMealComponent } from './components/menu/add-meal/add-meal.component'
+import { AddPostComponent } from './components/add-post/add-post.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +44,7 @@ import { AddMealComponent } from './components/menu/add-meal/add-meal.component'
     HomeComponent,
     OffersComponent,
     LoginComponent,
+    AddPostComponent,
     AddMealComponent
   ],
   imports: [
