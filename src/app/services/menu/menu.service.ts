@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {AngularFirestore} from '@angular/fire/firestore'
 import { HttpClient } from '@angular/common/http';
 import {AngularFireDatabase, AngularFireList, AngularFireObject} from '@angular/fire/database'
+import { Imeal } from 'src/app/ViewModels/imeal';
 @Injectable({
   providedIn: 'root'
 })
@@ -27,5 +28,11 @@ export class MenuService {
   getMealByChefID(cID:number)
   {
     return this.afs.collection("meals",ref => ref.where('chef','==',cID)).snapshotChanges()
+  }
+  deleteMeal(mID:number){
+    this.afs.doc(`meals/${mID}`).delete();
+  }
+  updateMeal(meal:Imeal){
+    this.afs.doc(`meals/${meal.id}`).update(meal);
   }
 }

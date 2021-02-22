@@ -1,17 +1,15 @@
-body{
-    font-family: 'Roboto', sans-serif;
-}
-
 h1{
     color: #FD5602;
     font-weight:bold;
+    font-family: 'Roboto', sans-serif;
 }
 h4{
     color:#000000;
+    font-family: 'Roboto', sans-serif;
 }
 h5{
     color: rgb(121, 121, 121);
-    
+    font-family: 'Roboto', sans-serif;
 }
 
 img{
@@ -25,6 +23,7 @@ img{
     width: 100px;
     font-size: large;
     transition: 0.3s;
+    font-family: 'Roboto', sans-serif;
 }
 .btn:hover {
     background:#fd8709 ;

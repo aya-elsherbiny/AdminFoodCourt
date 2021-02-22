@@ -42,4 +42,18 @@ option{
 #subTitle{
     color:#3a3d3b;
     margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+.fa-plus-circle{
+    margin:5px;
+    color: #FD5602;
+    font-size: 18px;
+    transition: 0.3s;
+}
+.fa-plus-circle:hover{
+    cursor: pointer;
+    color:#fd8709;
+}
+#addMeal{
+    color:#FD5602;
 }
