@@ -9,6 +9,7 @@ import { BlogComponent } from './components/blog/blog.component';
 import { ChefDishesComponent } from './components/chef/chef-dishes/chef-dishes.component';
 import { ChefProfileComponent } from './components/chef/chef-profile/chef-profile.component';
 import { ChefsComponent } from './components/chef/chefs/chefs.component';
+import { AddMealComponent } from './components/menu/add-meal/add-meal.component';
 import { MealDetailsComponent } from './components/menu/meal-details/meal-details.component';
 import { MenuParentComponent } from './components/menu/menu-parent/menu-parent.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: 'AddPost', component:AddPostComponent},
   {path:'MealDetails/:mID', component:MealDetailsComponent},
   {path: 'MenuParent', component:MenuParentComponent},
+  {path: 'AddMeal', component:AddMealComponent},
   {path: '', redirectTo: '/DashBoard', pathMatch:'full'},
   {path: "**", component:NotFoundComponent}
 ];
