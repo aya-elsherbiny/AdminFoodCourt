@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { MenuService } from 'src/app/services/menu/menu.service';
+import { Imeal } from 'src/app/ViewModels/imeal';
 
 @Component({
   selector: 'app-menu-child',
@@ -12,6 +13,20 @@ export class MenuChildComponent implements OnInit {
   subscription: Subscription|null = null;
   MealsList: any[] = [];
   mID:number=0;
+  deletedMealID:number = 0 ;
+
+  updatedMeal:Imeal = {
+    id:0,
+    name:'',
+    image:'',
+    chef:0,
+    category:0,
+    price:0,
+    description:'',
+    discount:'',
+    show:false
+  };
+
   selectedMeal: {mealImage:string, mealID:number, mealName:string, mealPrice:number, mealDescription:string}=
   {
     mealImage:'',
@@ -52,6 +67,23 @@ export class MenuChildComponent implements OnInit {
   viewDetails(mID:number){
     
     this.router.navigate(['/MealDetails',mID]);
+  }
+  setMeal(meal:Imeal)
+  {
+    this.updatedMeal = meal ;
+  }
+  setMealID(id:number)
+  {
+    this.deletedMealID= id;
+  }
+  deleteMeal(){
+    this.mealService.deleteMeal(this.deletedMealID);
+    alert("meal successfully deleted :)");
+  }
+  editMeal(){
+    console.log(this.updatedMeal)
+    this.mealService.updateMeal(this.updatedMeal);
+    alert("meal successfully updated :)");
   }
   ngOnDestroy(): void {
     this.subscription?.unsubscribe();

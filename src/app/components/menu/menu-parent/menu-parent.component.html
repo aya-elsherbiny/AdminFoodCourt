@@ -5,7 +5,12 @@
     customized meals at a fraction of the cost.</h4>
 </header>
 
-  <!-- Filling the dropdown list with category names from the database --> -->
+<div class="container d-flex flex-row justify-content-center" style="margin-top:25px">
+  <i class="fas fa-plus-circle"></i>
+  <h5 id="addMeal">Add a new meal</h5>
+</div>
+
+  <!-- Filling the dropdown list with category names from the database -->
   <div class="d-flex flex-row container justify-content-between" style="margin-top:50px">
       <button class="btn CatBtn rounded-pill active" *ngFor="let cat of CategoryList" (click)="setCatID(cat.id)">
         {{cat.name}}

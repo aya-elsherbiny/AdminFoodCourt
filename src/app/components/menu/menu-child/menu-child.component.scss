@@ -1,15 +1,15 @@
 body{
     font-family: 'Roboto', sans-serif;
 }
-.fa-shopping-cart{
+.fa-trash-alt, .fa-edit{
     margin-left: 10px;
     font-size: 25px;
     color: #FD5602;
     transition: 0.3s;
 }
-.fa-shopping-cart:hover{
+.fa-trash-alt:hover , .fa-edit:hover{
     cursor: pointer;
-    color:#fd8709 ;
+    color:#fd8709;
     
 }
 .card-title {
