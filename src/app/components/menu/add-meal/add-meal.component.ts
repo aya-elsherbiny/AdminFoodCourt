@@ -29,8 +29,11 @@ export class AddMealComponent implements OnInit {
     if(this.addedMeal.name!='' && this.addedMeal.description!='' && this.addedMeal.image!=''
     && this.addedMeal.discount!=''
     )
-    this.menuService.addMeal(this.addedMeal);
-    this.router.navigate(['/MenuParent']);
+    {
+      this.menuService.addMeal(this.addedMeal);
+      this.router.navigate(['/MenuParent']);
+    }
+    
 
   }
 }

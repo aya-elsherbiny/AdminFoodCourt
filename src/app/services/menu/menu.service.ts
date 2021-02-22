@@ -30,7 +30,18 @@ export class MenuService {
     return this.afs.collection("meals",ref => ref.where('chef','==',cID)).snapshotChanges()
   }
   addMeal(meal:Imeal){
-    this.afs.collection("meals").add(meal)
+    // this.afs.collection("meals").add(meal)
+    this.afs.collection("meals").doc(`${meal.id}`).set({
+      id: Number(meal.id),
+      name: meal.name,
+      chef: Number(meal.chef),
+      category: Number(meal.category),
+      price:Number(meal.price),
+      image: meal.image,
+      show: meal.show,
+      discount: meal.discount
+    }
+    )
   }
   deleteMeal(mID:number){
     this.afs.doc(`meals/${mID}`).delete();
