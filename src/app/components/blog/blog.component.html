@@ -1,1 +1,51 @@
-<p>blog works!</p>
+<!-- start section (header)-->
+<div class="bg-image align-items-center justify-content-center">
+    <h2 class="text-center">Blog Details</h2>
+    <nav class="inner text-center">
+      <a class="innerItem" href="">Home</a> &nbsp;
+      <span>  <i class="fas fa-arrow-right"></i>  </span> &nbsp;
+      <span>Blog Details</span>
+    </nav>
+    <a class="innerItem" href="">Add Posts</a>
+  </div>
+  <!-- section 2 Blog List left& side -->
+<br>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-12 col-sm-12">
+       <div class="container-fluid d-flex flex-lg-nowrap flex-column flex-md-nowrap flex-wrap justify-content-center m-4" *ngFor="let post of AllPosts">
+            <img [src]="post.image" style="width:80% ;">
+            <div class="postDetails p-3">
+              <h5 class="postTitle">{{post.title}}</h5>
+              <p>{{post.date.toDate()|date:'yyyy/MM/dd h:mm:ss a'}}</p>
+              <p>{{post.postBody}}</p>
+            </div>
+       </div>
+        
+      </div>
+      <!-------------------- right side------------------------------------ -->
+      <div class="col-lg-4 col-md-12 col-sm-12">
+        <div class="rightSide">
+          <img class="mt-4" style=" width: 400px; border-radius: 5%;" src="https://firebasestorage.googleapis.com/v0/b/foodcourt-2f1f1.appspot.com/o/blog%2Fpizza.jpg?alt=media&token=a40a3773-ccd8-4d35-909a-97cb9e8a4966" alt="food">
+        </div>
+        <div>
+          <div class="mt-2"> <h2>Comments</h2></div>
+          <div class="container-fluid d-flex flex-lg-nowrap flex-column flex-md-nowrap flex-wrap justify-content-start"  *ngFor="let comment of AllComments">
+              <h5 class="commentName">{{comment.name}}</h5>
+              <p>{{comment.date.toDate()|date:'yyyy/MM/dd h:mm:ss a'}}</p>
+              <p>{{comment.comment}}</p>
+              <hr>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+
+
+  
+
+
+ 
+

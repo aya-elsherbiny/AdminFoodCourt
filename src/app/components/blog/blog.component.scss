@@ -1,3 +1,99 @@
-p{
-    margin-top: 100px;
+// start section 
+.bg-image {
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/foodcourt-2f1f1.appspot.com/o/blog%2F1.jpg?alt=media&token=4f39814b-5802-44fa-b856-6e1d944d56b3");
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 100%;
+    margin-top: 5%;
+    padding:8%;
+    background-position: center center
 }
+.container{
+    font-family:'Roboto', sans-serif;
+}
+.innerItem{
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+}
+h2 {
+    color: #fd5602;
+
+}
+.commentName{
+    font-weight: bold;
+    font-size:25px;
+}
+.postDetails{
+    background-color: rgb(240, 234, 234);
+    width: 80%;
+    
+}
+hr{
+   font-weight: bolder;
+}
+
+.postTitle{
+    color: #fd5602;
+    font-weight: bolder;
+    font-size:25px;
+}
+.alert{
+ width: 41.5%;
+ height: 40px;
+}
+// .social .leftList {
+//     list-style: none;
+// }
+// .social i {
+//     display: inline-block;
+//     padding: 2%;
+// }
+// .leftList a {
+//     text-decoration: none;
+// }
+
+.leftList img {
+    width: 80%;
+}
+// .search a {
+//     color: #b5b5b5;
+//     top: 10%;
+//     transform: translateY(-50%);
+//     transition: 0.3s;
+//     text-decoration: none;
+// }
+
+.form_title {
+    margin-bottom: 50px;
+    margin-left: 8%;
+    text-transform: uppercase;
+
+}
+
+.food_btn {
+    
+    font-size: 18px;
+    font-weight: 400;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 32px;
+    background: #ffaf42;
+    border-radius: 5px;
+    color: #fff;
+    display: inline-block;
+    text-transform: capitalize;
+    text-decoration: none;
+    position: relative;
+    transform: translateZ(0px);
+    transition-duration: 0.5s;
+    margin-left: 8%;
+
+}
+.ng-valid:not(form)  {
+    border-left: 5px solid #42A948; /* green */
+  }
+  
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }
