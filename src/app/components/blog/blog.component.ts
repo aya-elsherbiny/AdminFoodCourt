@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup, Validators } from '@angular/forms';
 import { BlogService } from 'src/app/blog.service';
+import { Post } from 'src/app/ViewModels/post';
 
 @Component({
   selector: 'app-blog',
@@ -11,6 +12,15 @@ export class BlogComponent implements OnInit {
 
   AllPosts: any[]=[];
   AllComments:any[]=[];
+  deletedPostID:number=0;
+  updatedPost:Post = {
+    id:0,
+    image:'',
+    title:'',
+    date: new Date(),
+    postBody:'',
+    
+  };
   constructor(private fb:FormBuilder, private blog:BlogService) {
    }
   
@@ -56,5 +66,22 @@ export class BlogComponent implements OnInit {
       }
     )
 
+  }
+  setPostID(id:number)
+  {
+    this.deletedPostID= id;
+  }
+  deletePost(){
+    this.blog.deletePost(this.deletedPostID);
+    alert("post successfully deleted :)");
+  }
+  setPost(post:Post)
+  {
+    this.updatedPost = post ;
+  }
+  editPost(){
+    console.log(this.updatedPost)
+    this.blog.updatePost(this.updatedPost);
+    alert("post successfully updated :)");
   }
 }

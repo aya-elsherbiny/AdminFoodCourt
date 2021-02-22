@@ -42,27 +42,12 @@ hr{
  width: 41.5%;
  height: 40px;
 }
-// .social .leftList {
-//     list-style: none;
-// }
-// .social i {
-//     display: inline-block;
-//     padding: 2%;
-// }
-// .leftList a {
-//     text-decoration: none;
-// }
+
 
 .leftList img {
     width: 80%;
 }
-// .search a {
-//     color: #b5b5b5;
-//     top: 10%;
-//     transform: translateY(-50%);
-//     transition: 0.3s;
-//     text-decoration: none;
-// }
+
 .addPost{
     text-decoration: none;
     margin-top:20px;
@@ -77,30 +62,31 @@ hr{
 }
 .img__wrap {
     position: relative;
-  }
-.food_btn {
-    
-    font-size: 18px;
-    font-weight: 400;
-    height: 45px;
-    line-height: 45px;
-    padding: 0 32px;
-    background: #ffaf42;
-    border-radius: 5px;
-    color: #fff;
-    display: inline-block;
-    text-transform: capitalize;
-    text-decoration: none;
-    position: relative;
-    transform: translateZ(0px);
-    transition-duration: 0.5s;
-    margin-left: 8%;
 
-}
-.ng-valid:not(form)  {
-    border-left: 5px solid #42A948; /* green */
+  }
+  .img__description {
+    position: absolute;
+    top: 0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    padding:25% 5% 20% 5%;
+    background: rgba(217, 205, 189, 0.6);
+    color:#fd5602;
+    visibility: hidden;
+    opacity: 0;
+    font-size: 35px;
+    font-weight:bold;
+    text-decoration: none;
+    /* transition effect. not necessary */
+    transition: opacity .2s, visibility .2s;
   }
   
-  .ng-invalid:not(form)  {
-    border-left: 5px solid #a94442; /* red */
+  .img__wrap:hover .img__description {
+    visibility: visible;
+    opacity: 1;
+     width: 80%;
+    
   }
+  
+
