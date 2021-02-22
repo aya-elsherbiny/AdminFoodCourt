@@ -66,13 +66,13 @@
               <input type="text" class="form-control" id="ID" [value]="updatedMeal.id" readonly/>
 
               <label for="Name">Name: </label>
-              <input type="text" class="form-control" id="Name" [value]="updatedMeal.name"/>
+              <input type="text" class="form-control" id="Name" [value]="updatedMeal.name" name="Name" [(ngModel)]="updatedMeal.name"/>
 
               <label for="Price">Price: </label>
-              <input type="text" class="form-control" id="Price" [value]="updatedMeal.price"/>
+              <input type="text" class="form-control" id="Price" [value]="updatedMeal.price" name="Price" [(ngModel)]="updatedMeal.price"/>
 
               <label for="Name">Description: </label>
-              <textarea class="form-control" id="Description" [value]="updatedMeal.description"></textarea>
+              <textarea class="form-control" id="Description" [value]="updatedMeal.description" name="Description" [(ngModel)]="updatedMeal.description"></textarea>
           </form>
         </div>
         <div class="modal-footer justify-content-center">

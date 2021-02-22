@@ -23,7 +23,8 @@ import { ChefsComponent } from './components/chef/chefs/chefs.component';
 import { MealDetailsComponent } from './components/menu/meal-details/meal-details.component';
 import { HomeComponent } from './components/admin/home/home.component';
 import { OffersComponent } from './components/admin/offers/offers.component';
-import { LoginComponent } from './components/admin/login/login.component'
+import { LoginComponent } from './components/admin/login/login.component';
+import { AddMealComponent } from './components/menu/add-meal/add-meal.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { LoginComponent } from './components/admin/login/login.component'
     MealDetailsComponent,
     HomeComponent,
     OffersComponent,
-    LoginComponent
+    LoginComponent,
+    AddMealComponent
   ],
   imports: [
     BrowserModule,

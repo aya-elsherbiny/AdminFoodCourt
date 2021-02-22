@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { CategoryService } from 'src/app/services/menu/category.service';
 import { MenuChildComponent } from '../menu-child/menu-child.component';
@@ -14,12 +15,15 @@ export class MenuParentComponent implements OnInit {
 
   @ViewChild(MenuChildComponent) DetailsRef:any;
   subscription:Subscription|null = null;
-  constructor(private catService:CategoryService) { }
+  constructor(private catService:CategoryService,
+    private router:Router) { }
 
   setCatID(id:number): void {
     this.SelectedCategory = id;
   }
-
+  openWindow(){
+    this.router.navigate(['/AddMeal']);
+  }
   ngOnInit(): void {
     this.getAllCategories();
   }
