@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BlogService } from 'src/app/blog.service';
+import { BlogService } from 'src/app/services/Blog/blog.service';
+
 import { Post } from 'src/app/ViewModels/post';
 
 @Component({

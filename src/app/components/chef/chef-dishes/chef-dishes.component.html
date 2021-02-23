@@ -1,22 +1,27 @@
 <!-- Viewing dishes for each chef -->
-<div class="container">
-    <div class="row">
-            <div class="text-start col-lg-5 col-md-6 col-sm-6  col-xs-12" *ngFor = "let meal of meals" >
+<div class="container-fluid justify-content-center ">
+    <div class="row justify-content-center ">
+            <div class="col-sm-10 col-xs-12 col-xl-3 col-lg-4 col-md-4 rounded card text-center card-light" style="margin:20px; border-color: white;" *ngFor = "let meal of meals" >
                
                 <div class="img__wrap">
-                    <img [src]="meal?.image"class="img-fluid  " ><br>
-                    <a class="nav-link text-center img__description" routerLink="/MenuParent">Get in the main menu</a><br>
+                    <img [src]="meal?.image"class="rounded-corners card-img-top img__img " >
+                    <div class="img__description">
+                        <button class="btn btn-link text-center img__description" (click)="viewDetails(meal.id)">Get in the main menu</button>
+                    </div>
                   </div>
-                 <h4>{{meal.name}}</h4>
-                 <p>{{meal.description}}</p>
+                  <div class="card-body">
+                    <h4 class="card-title">{{meal.name}}</h4>
+                    <p class="description">
+                        {{meal.description}}
+                     </p>
+                  </div>
+                 
                 
-                <!-- <div>
-                    <a class="nav-link p-0" routerLink="/MenuParent">Get in the main menu</a><br>
-                </div> -->
-               
+            
             </div>
     </div>
     </div>
+    
     
     
     

@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/database';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { Post } from './ViewModels/post';
+import { Post } from 'src/app/ViewModels/post';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,7 +14,6 @@ export class BlogService {
     private db: AngularFireDatabase,
     private afs: AngularFirestore) { }
 
-
     getAllPosts() {
       return this.afs.collection("posts").snapshotChanges();
     }
@@ -22,13 +22,27 @@ export class BlogService {
       return this.afs.collection("comments").snapshotChanges();
     }
    addPost(post:Post){
-    this.afs.collection("posts").add(post)
+    this.afs.collection("posts").doc(`${post.id}`).set({
+      id:Number(post.id),
+      image:post.image,
+      title:post.title,
+      date:post.date,
+      postBody:post.postBody
+    })
    }
    deletePost(pID:number){
     this.afs.doc(`posts/${pID}`).delete();
   }
   updatePost(post:Post){
-    this.afs.doc(`posts/${post.id}`).update(post);
+    this.afs.collection("posts").doc(`${post.id}`).set({
+      id:Number(post.id),
+      image:post.image,
+      title:post.title,
+      date:post.date,
+      postBody:post.postBody
+    })
   }
+
+
 
 }
