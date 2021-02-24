@@ -9,7 +9,7 @@ import { DashboardComponent } from './components/admin/dashboard/dashboard.compo
 import { HeaderComponent } from './components/admin/header/header.component';
 import { FooterComponent } from './components/admin/footer/footer.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { BlogComponent } from './components/blog/blog.component';
+import { BlogComponent } from './components/Blogg/blog/blog.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
@@ -26,7 +26,7 @@ import { OffersComponent } from './components/admin/offers/offers.component';
 import { LoginComponent } from './components/admin/login/login.component';
 
 import { AddMealComponent } from './components/menu/add-meal/add-meal.component'
-import { AddPostComponent } from './components/add-post/add-post.component';
+import { AddPostComponent } from './components/Blogg/add-post/add-post.component';
 @NgModule({
   declarations: [
     AppComponent,

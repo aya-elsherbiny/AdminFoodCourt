@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup, Validators } from '@angular/forms';
-import { BlogService } from 'src/app/blog.service';
+import { BlogService } from 'src/app/services/Blog/blog.service';
+
 import { Post } from 'src/app/ViewModels/post';
 
 @Component({
@@ -80,7 +81,7 @@ export class BlogComponent implements OnInit {
     this.updatedPost = post ;
   }
   editPost(){
-    console.log(this.updatedPost)
+    // console.log(this.updatedPost)
     this.blog.updatePost(this.updatedPost);
     alert("post successfully updated :)");
   }

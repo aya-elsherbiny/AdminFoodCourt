@@ -60,9 +60,12 @@ hr{
     text-transform: uppercase;
 
 }
+.btn{
+    background-color: #fd5602;
+}
 .img__wrap {
     position: relative;
-
+  
   }
   .img__description {
     position: absolute;
@@ -80,6 +83,7 @@ hr{
     text-decoration: none;
     /* transition effect. not necessary */
     transition: opacity .2s, visibility .2s;
+    width: 80%;
   }
   
   .img__wrap:hover .img__description {
@@ -88,5 +92,12 @@ hr{
      width: 80%;
     
   }
+  .fa-edit{
+    margin-right:20px ;
+  } 
   
+  .fa-trash-alt{
+    
+     margin-left: 20px;
+  }
 

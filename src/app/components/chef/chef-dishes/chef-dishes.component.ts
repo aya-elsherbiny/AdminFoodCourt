@@ -16,7 +16,7 @@ export class ChefDishesComponent implements OnInit {
 
   constructor(
     private mService:MenuService,
-  
+    private router:Router
   ) { }
 
   ngOnInit(): void {
@@ -45,5 +45,9 @@ export class ChefDishesComponent implements OnInit {
         console.log(err);
       }
     )
+  }
+  viewDetails(mID:number){
+    
+    this.router.navigate(['/MealDetails',mID]);
   }
 }
