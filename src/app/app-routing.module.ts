@@ -27,7 +27,7 @@ const routes: Routes = [
   {path:'MealDetails/:mID', component:MealDetailsComponent},
   {path: 'MenuParent', component:MenuParentComponent},
   {path: 'AddMeal', component:AddMealComponent},
-  {path: '', redirectTo: '/DashBoard', pathMatch:'full'},
+  {path: '', redirectTo: '/LogIn', pathMatch:'full'},
   {path: "**", component:NotFoundComponent}
 ];
 
