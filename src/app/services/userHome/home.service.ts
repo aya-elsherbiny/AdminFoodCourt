@@ -12,8 +12,9 @@ export class HomeService {
     private afs: AngularFirestore
   ) { }
   getHomeItems() {
-    return this.afs.collection("home").snapshotChanges();
+    return this.afs.collection("static").doc("home").collection(localStorage.getItem("lang")||"en").doc(localStorage.getItem("lang")||"en").snapshotChanges();
   }
+
 
   getHomeGeneralProducts(){
     return this.afs.collection("home").doc("general").collection("items").snapshotChanges();

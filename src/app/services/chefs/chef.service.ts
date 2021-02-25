@@ -16,11 +16,11 @@ export class ChefService {
   ) { }
   getAllChefs()
   {
-    return this.afs.collection("chefs").snapshotChanges();
+    return this.afs.collection("chefs").doc(localStorage.getItem("lang")||"en").collection(localStorage.getItem("lang")||"en").snapshotChanges();
   }
 
   getChefsByID(cID:number)
   {
-    return this.afs.collection("chefs",ref => ref.where('id','==', cID)).snapshotChanges();
+    return this.afs.collection("chefs").doc(localStorage.getItem("lang")||"en").collection(localStorage.getItem("lang")||"en",ref => ref.where('id','==', cID)).snapshotChanges();
   }
 }

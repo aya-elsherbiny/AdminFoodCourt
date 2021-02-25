@@ -15,31 +15,31 @@ export class MenuService {
     private afs: AngularFirestore
   ) { }
   getAllMeals() {
-    return this.afs.collection("meals").snapshotChanges();
+    return this.afs.collection("meals").doc(localStorage.getItem("lang")||"en").collection(localStorage.getItem("lang")||"en").snapshotChanges();
   }
   getMealByCategoryID(catID: number)
   {
-    return this.afs.collection("meals",ref => ref.where('category','==',catID)).snapshotChanges();
+    return this.afs.collection("meals").doc(localStorage.getItem("lang")||"en").collection(localStorage.getItem("lang")||"en",ref => ref.where('categoryID','==',catID)).snapshotChanges();
   }
   getMealByID(pID:number)
   {
-    return this.afs.collection("meals",ref => ref.where('id','==',pID)).snapshotChanges();
+    return this.afs.collection("meals").doc(localStorage.getItem("lang")||"en").collection(localStorage.getItem("lang")||"en",ref => ref.where('id','==',pID)).snapshotChanges();
   }
   getMealByChefID(cID:number)
   {
-    return this.afs.collection("meals",ref => ref.where('chef','==',cID)).snapshotChanges()
+    return this.afs.collection("meals").doc(localStorage.getItem("lang")||"en").collection(localStorage.getItem("lang")||"en",ref => ref.where('chefID','==',cID)).snapshotChanges()
   }
   addMeal(meal:Imeal){
     // this.afs.collection("meals").add(meal)
-    this.afs.collection("meals").doc(`${meal.id}`).set({
+    this.afs.collection("meals").doc(localStorage.getItem("lang")||"en").collection(localStorage.getItem("lang")||"en").doc(`${meal.id}`).set({
       id: Number(meal.id),
       name: meal.name,
-      chef: Number(meal.chef),
-      category: Number(meal.category),
+      chefID: Number(meal.chefID),
+      categoryID: Number(meal.categoryID),
       price:Number(meal.price),
       description:meal.description,
       image: meal.image,
-      show: meal.show,
+      show: Boolean(meal.show),
       discount: meal.discount
     }
     )
@@ -49,15 +49,15 @@ export class MenuService {
   }
   updateMeal(meal:Imeal){
     // this.afs.doc(`meals/${meal.id}`).update(meal);
-    this.afs.collection("meals").doc(`${meal.id}`).set({
+    this.afs.collection("meals").doc(localStorage.getItem("lang")||"en").collection(localStorage.getItem("lang")||"en").doc(`${meal.id}`).set({
       id: Number(meal.id),
       name: meal.name,
-      chef: Number(meal.chef),
-      category: Number(meal.category),
+      chefID: Number(meal.chefID),
+      categoryID: Number(meal.categoryID),
       price:Number(meal.price),
       description:meal.description,
       image: meal.image,
-      show: meal.show,
+      show: Boolean(meal.show),
       discount: meal.discount
     }
     )

@@ -1,112 +1,128 @@
 <body>
-
     <!-- general view of a product -->
     <div class="row featurette">
-        <div class="col-md-12 d-flex mx-auto">
-            <div class="col-md-1"></div>
-            <div class="col-md-4">
-                <h1 class="featurette-heading">Food Made With Love.<span class="text-muted">It’ll blow your
-                        mind.</span>
-                </h1>
-                <p class="featurette-body" >Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis
-                    euismod
-                    semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus
-                    ac cursus
-                    commodo.</p>
-            </div>
-            <div class="col-md-1"></div>
-            <div class="col-md-6">
-                <img src={{generalProducts[0].image}} class="img-fluid " alt="">
-            </div>
+      <div class="col-md-12 d-flex mx-auto">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+          <h1 class="featurette-heading">
+            {{ HomeItems.firstGeneralTextHeader1 }}
+            <span class="text-muted">{{
+              HomeItems.firstGeneralTextHeader2
+            }}</span>
+          </h1>
+          <p class="featurette-body">
+            {{ HomeItems.firstGeneralTextFooter }}
+          </p>
         </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-6">
+          <img src="{{ HomeItems.firstGeneralImage }}" class="img-fluid" alt="" />
+        </div>
+      </div>
     </div>
-
-    <hr class="featurette-divider">
-
+  
+    <hr class="featurette-divider" />
+  
     <div class="row featurette">
-        <div class="col-md-12 d-flex mx-auto">
-            <div class="col-md-1"></div>
-            <div class="col-md-6">
-                <img src={{generalProducts[1].image}} class="img-fluid" alt="">
-            </div>
-            
-            <div class="col-md-4">
-                <h1 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for
-                        yourself.</span></h1>
-                <p class="featurette-body">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis
-                    euismod
-                    semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus
-                    ac cursus
-                    commodo.</p>
-            </div>
-            
+      <div class="col-md-12 d-flex mx-auto">
+        <div class="col-md-1"></div>
+        <div class="col-md-6">
+          <img
+            src="{{ HomeItems.secondGeneralImage }}"
+            class="img-fluid"
+            alt=""
+          />
         </div>
+  
+        <div class="col-md-4">
+          <h1 class="featurette-heading">
+            {{ HomeItems.secondGeneralTextHeader1 }}
+            <span class="text-muted">{{
+              HomeItems.secondGeneralTextHeader2
+            }}</span>
+          </h1>
+          <p class="featurette-body">{{ HomeItems.secondGeneralTextFooter }}</p>
+        </div>
+      </div>
     </div>
-
-    <hr class="featurette-divider">
+  
+    <hr class="featurette-divider" />
     <!-- Marketing messaging and featurettes
-  ================================================== -->
+    ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
-    
+  
     <!-- Offers Section -->
-    <div class="container-fluid mx-auto" style="width: 80%;">
-
-        <div class="container-fluid d-inline-flex">
-            <h1 class="display-3">Offers</h1>
-            <div class="container text-right mt-5">
-                <p><a class="btn btn-sm buttonColor" routerLink="/Offers" role="button">Discover More</a></p>
-            </div>
+    <div class="container-fluid mx-auto" style="width: 80%">
+      <div class="container-fluid d-inline-flex">
+        <h1 class="display-3">{{ HomeItems.offers }}</h1>
+        <div class="container text-right mt-5">
+          <p>
+            <a
+              class="btn btn-sm buttonColor"
+              routerLink="/Offers"
+              role="button"
+              >{{ HomeItems.dicoverMore }}</a
+            >
+          </p>
         </div>
-
-        <div class="row d-flex col-lg-12 mx-auto">
-
-            <div class="col-lg-4" *ngFor="let offer of ListOffers">
-                <div class="card shadow card-light m-2" >
-                    <p class="ribbon"> Discount: {{offer?.discount}}</p>
-                    <img class="card-img-top" [src]="offer?.image">
-
-                    <div class="card-body">
-                        <h2>{{offer?.name}}</h2>
-                        <h5>{{offer?.price}} L.E.</h5>
-                        <!-- <p>{{offer?.description}}</p> -->
-                        <!-- <p><a class="btn buttonColor" href="./Menu-main.html" role="button">View details &raquo;</a></p> -->
-                    </div>
-
-                </div>
+      </div>
+  
+      <div class="row d-flex col-lg-12 mx-auto">
+        <div class="col-lg-4" *ngFor="let offer of ListOffers">
+          <div class="card shadow card-light m-2">
+            <p class="ribbon">Discount: {{ offer?.discount }}</p>
+            <img class="card-img-top" [src]="offer?.image" />
+  
+            <div class="card-body">
+              <h2>{{ offer?.name }}</h2>
+              <h5>{{ offer?.price }} L.E.</h5>
+              <!-- <p>{{offer?.description}}</p> -->
+              <!-- <p><a class="btn buttonColor" href="./Menu-main.html" role="button">View details &raquo;</a></p> -->
             </div>
+          </div>
         </div>
+      </div>
     </div>
-
-    <hr class="featurette-divider">
-
+  
+    <hr class="featurette-divider" />
+  
     <!-- Recommended Section -->
-    <div class="container-fluid mx-auto" style="width: 80%;">
-        <div class="container-fluid d-inline-flex">
-            <h1 class="display-3">Recommended</h1>
-            <div class="container text-right mt-5">
-                <p><a class="btn btn-sm buttonColor" routerLink="/MenuParent" role="button">Discover More</a></p>
-            </div>
+    <div class="container-fluid mx-auto" style="width: 80%">
+      <div class="container-fluid d-inline-flex">
+        <h1 class="display-3">{{ HomeItems.recommended }}</h1>
+        <div class="container text-right mt-5">
+          <p>
+            <a
+              class="btn btn-sm buttonColor"
+              routerLink="/MenuParent"
+              role="button"
+              >{{ HomeItems.dicoverMore }}</a
+            >
+          </p>
         </div>
-
-        <div class="row d-flex col-lg-12 mx-auto">
-            <div class="col-lg-4" *ngFor="let recommended of ListRecommended">
-                <div class="card shadow card-light m-2">
-
-                    <img class="card-img-top" [src]="recommended?.image">
-
-                    <div class="card-body">
-                        <h2>{{recommended?.name}}</h2>
-                        <h5>{{recommended?.price}} L.E.</h5>
-                        <p><a class="btn buttonColor" routerLink="/MenuParent" role="button">View details &raquo;</a></p>
-                    </div>
-
-                </div>
+      </div>
+  
+      <div class="row d-flex col-lg-12 mx-auto">
+        <div class="col-lg-4" *ngFor="let recommended of ListRecommended">
+          <div class="card shadow card-light m-2">
+            <img class="card-img-top" [src]="recommended?.image" />
+  
+            <div class="card-body">
+              <h2>{{ recommended?.name }}</h2>
+              <h5>{{ recommended?.price }} L.E.</h5>
+              <p>
+                <a class="btn buttonColor" href="#" role="button"
+                  >{{ HomeItems.viewDetails }} &raquo;</a
+                >
+              </p>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-
+  
     <!-- START THE FEATURETTES -->
-    <hr class="featurette-divider">
-
-</body>
-
+  
+    <hr class="featurette-divider" />
+  </body>
+  

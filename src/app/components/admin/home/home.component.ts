@@ -10,6 +10,7 @@ import { HomeService } from 'src/app/services/userHome/home.service';
 export class HomeComponent implements OnInit {
   subscription: Subscription|null = null;
   HomeList: any[] = [];
+  HomeItems: any;
   ListOffers: any[]=[];
   ListRecommended: any[]=[];
   generalProducts: any[]=[];
@@ -21,13 +22,9 @@ export class HomeComponent implements OnInit {
     this.getHomeRecommended();
   }
   getHomeGeneralProduct(){
-    this.homeService.getHomeGeneralProducts().subscribe(
+    this.homeService.getHomeItems().subscribe(
       (res)=>{
-        
-        res.forEach((element)=>{
-          //console.log(element.payload.doc.data());
-          this.generalProducts.push(element.payload.doc.data());
-        })
+        this.HomeItems=res.payload.data();
       },(err)=>{
         console.log(err);
       }

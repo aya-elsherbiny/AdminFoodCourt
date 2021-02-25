@@ -7,6 +7,7 @@
                 <img [src]="meal?.image" class="rounded-corners card-img-top img__img">
                 
                 <div class="img__description">{{meal?.description}} <br>
+                  <h4 *ngIf="meal?.show == true" class="ribbon">Discount: {{meal?.discount}}</h4>
                     <button style="color: white; text-align:center" type="button" class="btn btn-link" (click)="viewDetails(meal.id)"> More details</button>
                 </div>
             </div>
@@ -64,9 +65,19 @@
           <form>
               <label for="ID">ID: </label>
               <input type="text" class="form-control" id="ID" [value]="updatedMeal.id" readonly/>
+              <!-- <label for="Name">chefID: </label>
+              <input type="text" class="form-control" id="Name" [value]="updatedMeal.name" name="chefID" [(ngModel)]="updatedMeal.chefID"/>
+              <label for="Name">categoryID: </label>
+              <input type="text" class="form-control" id="Name" [value]="updatedMeal.name" name="categoryID" [(ngModel)]="updatedMeal.categoryID"/> -->
 
-              <label for="Name">Name: </label>
+              <label for="Disount">Name: </label>
               <input type="text" class="form-control" id="Name" [value]="updatedMeal.name" name="Name" [(ngModel)]="updatedMeal.name"/>
+
+              <label for="Name">Discount: </label>
+              <input type="text" class="form-control" id="Discount" [value]="updatedMeal.discount" name="Discount" [(ngModel)]="updatedMeal.discount"/>
+
+              <label for="Show">Show Discount: </label>
+              <input type="text" class="form-control" id="Show" [value]="updatedMeal.show" name="Show" [(ngModel)]="updatedMeal.show"/>
 
               <label for="Price">Price: </label>
               <input type="text" class="form-control" id="Price" [value]="updatedMeal.price" name="Price" [(ngModel)]="updatedMeal.price"/>

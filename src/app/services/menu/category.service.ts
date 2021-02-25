@@ -10,12 +10,10 @@ export class CategoryService {
   userRef: AngularFireList<any>[]=[];
   userRed: AngularFireObject<any>[]=[];
   constructor(
-    private http: HttpClient,
-    private db: AngularFireDatabase,
     private afs: AngularFirestore
   ) { }
   getAllCategories()
   {
-    return this.afs.collection("categories").snapshotChanges();
+    return this.afs.collection("categories").doc(localStorage.getItem("lang")||"en").collection(localStorage.getItem("lang")||"en").snapshotChanges();
   }
 }

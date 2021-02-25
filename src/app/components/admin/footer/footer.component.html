@@ -1,6 +1,5 @@
 <footer class="mainfooter" role="contentinfo">
-    
-    <div class="footer-middle">
+  <div class="footer-middle">
     <div class="container">
       <div class="row">
         <div class="col-md-3 col-sm-6">
@@ -9,11 +8,21 @@
             <!-- <h4>Heading 1</h4> -->
             <ul class="list-unstyled">
               <li><a href="#"></a></li>
-              <li><a href="#">Payment Center</a></li>
-              <li><a href="#">Contact Directory</a></li>
-              <li><a href="#">Forms</a></li>
-              <li><a href="#">News and Updates</a></li>
-              <li><a href="#">FAQs</a></li>
+              <li>
+                <a href="#">{{ FooterItems.paymentCenter }}</a>
+              </li>
+              <li>
+                <a href="#">{{ FooterItems.contactDirectory }}</a>
+              </li>
+              <li>
+                <a href="#">{{ FooterItems.forms }}</a>
+              </li>
+              <li>
+                <a href="#">{{ FooterItems.newsAndUpdates }}</a>
+              </li>
+              <li>
+                <a href="#">{{ FooterItems.faqs }}</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -23,30 +32,56 @@
           <div class="footer-pad">
             <!-- <h4>Heading 2</h4> -->
             <ul class="list-unstyled">
-              <li><a routerLink="/Home">Home</a></li>
-              <li><a routerLink="/MenuParent">Menu</a></li>
-              <li><a routerLink="/Chefs">Chefs</a></li>
-              <li><a routerLink="/LogIn">Login</a></li>
-              <li><a routerLink="/Signup">SignUp</a></li>
+              <li>
+                <a routerLink="/Home">{{ HeaderItems.home }}</a>
+              </li>
+              <li>
+                <a routerLink="/MenuParent">{{ HeaderItems.menu }}</a>
+              </li>
+              <li>
+                <a routerLink="/Chefs">{{ HeaderItems.chefs }}</a>
+              </li>
+              <li>
+                <a routerLink="/LogIn">{{ HeaderItems.login }}</a>
+              </li>
+              <li>
+                <a routerLink="/Signup">{{ HeaderItems.register }}</a>
+              </li>
             </ul>
           </div>
         </div>
 
         <div class="col-md-3">
-          <h4>Follow Us</h4>
-              <ul class="social-network social-circle">
-               <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-               <li><a href="#" class="icoLinkedin" title="Instagram"><i class="fa fa-instagram"></i></a></li>
-              </ul>				
+          <h4>{{ FooterItems.followUs }}</h4>
+          <ul class="social-network social-circle">
+            <li>
+              <a href="#" class="icoFacebook" title="{{ FooterItems.facebook }}"
+                ><i class="fa fa-facebook"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="icoLinkedin"
+                title="{{ FooterItems.instagram }}"
+                ><i class="fa fa-instagram"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-md-2">
+          <select class="custom-select" (change)="changeLang($event)">
+            <option value="en" [selected]="lang == 'en'">English</option>
+            <option value="ar" [selected]="lang == 'ar'">عربى</option>
+          </select>
+        </div>
       </div>
-      </div>
-    <div class="row">
-      <div class="col-md-12 copy">
-        <p class="text-center">&copy; Copyright 2021 - FoodCourt.  All rights reserved.</p>
+      <div class="row">
+        <div class="col-md-12 copy">
+          <p class="text-center">&copy; {{ FooterItems.copyRight }}</p>
+        </div>
       </div>
     </div>
-  
-  
-    </div>
-    </div>
-  </footer>
+  </div>
+</footer>
