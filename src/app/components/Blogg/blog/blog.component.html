@@ -40,13 +40,14 @@
           <img class="mt-4" style=" width: 400px; border-radius: 5%;" src="https://firebasestorage.googleapis.com/v0/b/foodcourt-2f1f1.appspot.com/o/blog%2Fpizza.jpg?alt=media&token=a40a3773-ccd8-4d35-909a-97cb9e8a4966" alt="food">
         </div>
         <div>
-          <div class="mt-2"> <h2>Comments</h2></div>
-          <div class="container-fluid d-flex flex-lg-nowrap flex-column flex-md-nowrap flex-wrap justify-content-start"  *ngFor="let comment of AllComments">
-              <h5 class="commentName">{{comment.name}}</h5>
-              <p>{{comment.date.toDate()|date:'yyyy/MM/dd h:mm:ss a'}}</p>
-              <p>{{comment.comment}}</p>
-              <hr>
-          </div>
+          <div class="mt-2"> <h2>Recent Comments</h2></div>
+            <div class="container-fluid d-flex flex-lg-nowrap flex-column flex-md-nowrap flex-wrap justify-content-start"  *ngFor="let comment of AllComments"><hr/>
+                <!-- <h5 class="commentName">{{comment.name}}</h5> -->
+                 <p class="commentBody"><i class="far fa-comments p-2"></i>{{comment.comment}}</p>
+                
+                <p class="p-2 commentDate">{{comment.date.toDate()|date:'yyyy/MM/dd h:mm:ss a'}}</p>
+              
+            </div>
         </div>
       </div>
     </div>
