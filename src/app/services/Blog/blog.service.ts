@@ -15,14 +15,14 @@ export class BlogService {
     private afs: AngularFirestore) { }
 
     getAllPosts() {
-      return this.afs.collection("posts").snapshotChanges();
+      return this.afs.collection("posts").doc(localStorage.getItem("lang")||"en").collection(localStorage.getItem("lang")||"en").snapshotChanges();
     }
   
     getAllComments() {
       return this.afs.collection("comments").snapshotChanges();
     }
    addPost(post:Post){
-    this.afs.collection("posts").doc(`${post.id}`).set({
+    this.afs.collection("posts").doc(localStorage.getItem("lang")||"en").collection(localStorage.getItem("lang")||"en").doc(`${post.id}`).set({
       id:Number(post.id),
       image:post.image,
       title:post.title,
@@ -34,7 +34,7 @@ export class BlogService {
     this.afs.doc(`posts/${pID}`).delete();
   }
   updatePost(post:Post){
-    this.afs.collection("posts").doc(`${post.id}`).set({
+    this.afs.collection("posts").doc(localStorage.getItem("lang")||"en").collection(localStorage.getItem("lang")||"en").doc(`${post.id}`).set({
       id:Number(post.id),
       image:post.image,
       title:post.title,
