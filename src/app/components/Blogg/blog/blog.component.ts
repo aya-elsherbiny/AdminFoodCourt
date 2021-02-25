@@ -22,6 +22,12 @@ export class BlogComponent implements OnInit {
     postBody:'',
     
   };
+  // addComment:IComment = {
+  //   // id:0,
+  //   date:new Date(),
+  //   comment:''
+  // };
+
   constructor(private fb:FormBuilder, private blog:BlogService) {
    }
   

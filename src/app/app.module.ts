@@ -27,6 +27,8 @@ import { LoginComponent } from './components/admin/login/login.component';
 
 import { AddMealComponent } from './components/menu/add-meal/add-meal.component'
 import { AddPostComponent } from './components/Blogg/add-post/add-post.component';
+import { AddChefComponent } from './components/chef/add-chef/add-chef.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +47,9 @@ import { AddPostComponent } from './components/Blogg/add-post/add-post.component
     OffersComponent,
     LoginComponent,
     AddPostComponent,
-    AddMealComponent
+    AddMealComponent,
+    AddChefComponent,
+    
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,11 @@
 
 <div class="container-fluid">
     <div class="row d-flex justify-content-center">
-        <div id="ourChefs" class="text-center col-12">Our Chefs</div><br><br>
-
+        <div id="ourChefs" class="col-12  d-flex flex-column  align-items-center">Our Chefs
+            <a class="container d-flex flex-row justify-content-center addChef" style="margin-top:10px ; margin-bottom: 5px;" routerLink="/AddChef">
+                Add New Chef</a>
+        </div>
+        
         <div class="shadow rounded card text-left col-3 card-light p-0 " style="margin-right: 20px; margin-bottom: 20px;"
             *ngFor="let chef of ChefList">
 

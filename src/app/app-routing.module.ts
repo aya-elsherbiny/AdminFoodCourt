@@ -13,6 +13,7 @@ import { AddMealComponent } from './components/menu/add-meal/add-meal.component'
 import { MealDetailsComponent } from './components/menu/meal-details/meal-details.component';
 import { MenuParentComponent } from './components/menu/menu-parent/menu-parent.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { AddChefComponent } from './components/chef/add-chef/add-chef.component';
 
 const routes: Routes = [
   {path: 'DashBoard', component:DashboardComponent},
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path:'Dishes/:cID',component:ChefDishesComponent},
   {path: 'Blog', component:BlogComponent},
   {path: 'AddPost', component:AddPostComponent},
+  {path: 'AddChef', component:AddChefComponent},
   {path:'MealDetails/:mID', component:MealDetailsComponent},
   {path: 'MenuParent', component:MenuParentComponent},
   {path: 'AddMeal', component:AddMealComponent},

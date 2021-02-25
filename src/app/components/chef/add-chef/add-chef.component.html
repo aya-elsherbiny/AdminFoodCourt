@@ -1,0 +1,30 @@
+<div class="card">
+    <div class="card-container">
+        <h2 class = "card-title text-center"> Add Chef </h2>
+        <form class="col-12" (ngSubmit) = "onSubmit()">
+            <div class="row justify-content-center">
+                <div class="input-field col-8" style="margin:15px;">
+                    <label>ID: </label>
+                    <input type="text" class="form-control" placeholder="Add ID" [(ngModel)]="addChef.id" name="id">
+                </div>
+
+                <div class="input-field col-8" style="margin:15px;">
+                    <label>Image: </label>
+                    <input type="text" class="form-control" placeholder="Add Image" [(ngModel)]="addChef.image" name="image">
+                </div>
+
+                <div class="input-field col-8" style="margin:15px;">
+                    <label>Name: </label>
+                    <input type="text" class="form-control" placeholder="Add Name" [(ngModel)]="addChef.name" name="name">
+                </div>
+
+                <div class="input-field col-8" style="margin:15px;">
+                    <label>Description: </label>
+                    <input type="text" class="form-control" placeholder="Add Description" [(ngModel)]="addChef.description" name="description">
+                </div>
+            </div>
+            <input type="submit" class="btn btn-white food_btn" value="Add">
+        </form>
+    </div>
+</div>
+

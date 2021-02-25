@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/database';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { IChef } from 'src/app/ViewModels/ichef';
 
 @Injectable({
   providedIn: 'root'
@@ -23,4 +24,12 @@ export class ChefService {
   {
     return this.afs.collection("chefs").doc(localStorage.getItem("lang")||"en").collection(localStorage.getItem("lang")||"en",ref => ref.where('id','==', cID)).snapshotChanges();
   }
+  addChef(chef:IChef){
+    this.afs.collection("chefs").doc(localStorage.getItem("lang")||"en").collection(localStorage.getItem("lang")||"en").doc(`${chef.id}`).set({
+      id:Number(chef.id),
+      name:chef.name,
+      image:chef.image,
+      description:chef.description
+    })
+   }
 }
