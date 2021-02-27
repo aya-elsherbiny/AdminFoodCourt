@@ -45,7 +45,7 @@ export class MenuService {
     )
   }
   deleteMeal(mID:number){
-    this.afs.doc(`meals/${mID}`).delete();
+    this.afs.collection("meals").doc(localStorage.getItem("lang")||"en").collection(localStorage.getItem("lang")||"en").doc(`${mID}`).delete();
   }
   updateMeal(meal:Imeal){
     // this.afs.doc(`meals/${meal.id}`).update(meal);

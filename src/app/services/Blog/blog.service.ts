@@ -31,7 +31,7 @@ export class BlogService {
     })
    }
    deletePost(pID:number){
-    this.afs.doc(`posts/${pID}`).delete();
+    this.afs.collection("posts").doc(localStorage.getItem("lang")||"en").collection(localStorage.getItem("lang")||"en").doc(`${pID}`).delete();
   }
   updatePost(post:Post){
     this.afs.collection("posts").doc(localStorage.getItem("lang")||"en").collection(localStorage.getItem("lang")||"en").doc(`${post.id}`).set({
