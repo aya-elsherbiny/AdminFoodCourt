@@ -12,8 +12,10 @@ export class MealDetailsComponent implements OnInit {
   private subscriptionList: Subscription[]=[] ;
   meals:any;
   mID:number=0;
-  starRating=0;
   count:number=1;
+  subscription: Subscription|null = null;
+  MealsList: any[] = [];
+  deletedMealID:number = 0 ;
   constructor(
     private activatedRoute: ActivatedRoute,
     private mService:MenuService,
@@ -40,6 +42,14 @@ export class MealDetailsComponent implements OnInit {
       this.subscriptionList.push(mealSubscription);
     })
     this.subscriptionList.push(routeParam);
+  }
+  deleteMeal(){
+    this.mService.deleteMeal(this.mID);
+    alert("meal successfully deleted :)");
+  }
+  editMeal(){
+    this.mService.updateMeal(this.meals);
+    alert("meal successfully updated :)");
   }
   back(){
     this.location.back();
