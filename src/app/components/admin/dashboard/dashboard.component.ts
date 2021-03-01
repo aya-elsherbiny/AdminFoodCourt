@@ -10,6 +10,7 @@ import { OrdersService } from 'src/app/services/Orders/orders.service';
 export class DashboardComponent implements OnInit {
   subscription:Subscription|null = null;
   orderList:any[]=[];
+  meals:any[]=[];
   constructor(
     private order:OrdersService
   ) { }
@@ -23,7 +24,7 @@ export class DashboardComponent implements OnInit {
         console.log(res);
         res.forEach((element)=>{
           console.log(element.payload.doc.data());
-          this.orderList.push(element.payload.doc.data())
+          this.orderList.push(element.payload.doc.data());
         })
         
         console.log(this.orderList);
