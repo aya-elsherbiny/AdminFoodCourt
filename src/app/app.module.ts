@@ -28,6 +28,7 @@ import { LoginComponent } from './components/admin/login/login.component';
 import { AddMealComponent } from './components/menu/add-meal/add-meal.component'
 import { AddPostComponent } from './components/Blogg/add-post/add-post.component';
 import { AddChefComponent } from './components/chef/add-chef/add-chef.component';
+import { SignupComponent } from './components/admin/signup/signup.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { AddChefComponent } from './components/chef/add-chef/add-chef.component'
     AddPostComponent,
     AddMealComponent,
     AddChefComponent,
+    SignupComponent,
     
     
   ],

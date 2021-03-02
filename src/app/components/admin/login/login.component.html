@@ -1,51 +1,66 @@
 <div class="text-center raw">
-    <form class="form-signin col-3">
-      <img
-        class="mb-4 img-fluid"
-        src="./assets/3.png"
-        alt=""
-        width="100px"
-        height="100px"
-      />
-  
-      <h1 class="h3 mb-3 font-weight-normal">Please Log in</h1>
-  
-      <label for="username" class="sr-only">User Name</label>
-      <input
-        type="text"
-        #email
-        id="inputEmail"
-        class="form-control"
-        placeholder="User Name"
-        required
-        autofocus
-      />
-  
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input
-        type="password"
-        #password
-        id="inputPassword"
-        class="form-control"
-        placeholder="Password"
-        required
-      />
-  
-      <a
-        class="btn btn-lg btn-block"
-        
-        type="submit"
-        >Login</a
-      >
-  
-      <br />
-  
-      <!-- <h6>
-        Don't have an account? Then
-        <a value="Sign up" routerLink="/Signup">Sign up</a> now!
-      </h6> -->
-      <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
-    </form>
-  </div>
-  
-  <app-footer></app-footer>
+  <form class="form-signin col-3" [formGroup]="loginForm">
+    <img
+      class="mb-4 img-fluid"
+      src="./assets/3.png"
+      alt=""
+      width="100px"
+      height="100px"
+    />
+
+    <h1 class="h3 mb-3 font-weight-normal">Please Log in</h1>
+
+    <label for="username" class="sr-only">User Email</label>
+    <input
+      type="email"
+      #email
+      id="inputEmail"
+      class="form-control"
+      formControlName="userEmail"
+      placeholder="E-mail"
+      required
+      autofocus
+    />
+    <div
+      *ngIf="userEmail.invalid && (userEmail.dirty || userEmail.touched)"
+      class="alert alert-danger"
+    >
+      <div *ngIf="userEmail.errors.required">E-mail is required.</div>
+      <div *ngIf="userEmail.errors.email">
+        Please enter a valid email address.
+      </div>
+    </div>
+
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input
+      type="password"
+      #password
+      id="inputPassword"
+      class="form-control"
+      formControlName="userPassword"
+      placeholder="Password"
+      required
+    />
+    <div
+      *ngIf="
+        userPassword.invalid && (userPassword.dirty || userPassword.touched)
+      "
+      class="alert alert-danger"
+    >
+      <div *ngIf="userPassword.errors.required">Password is required.</div>
+      <div *ngIf="userPassword.errors.minlength">
+        Password must be at least 6 characters long.
+      </div>
+    </div>
+
+    <a
+      class="btn btn-lg btn-block"
+      (click)="onSignIn(email.value, password.value)"
+      type="submit"
+      >Login</a
+    >
+
+    <br />
+    <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
+  </form>
+</div>

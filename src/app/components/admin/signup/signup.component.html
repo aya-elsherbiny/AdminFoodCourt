@@ -1,0 +1,99 @@
+<div class="text-center">
+  <form [formGroup]="signUpForm" class="form-signin">
+    <img
+      class="mb-4 img-fluid"
+      src="./assets/3.png"
+      alt=""
+      width="100px"
+      height="75px"
+    />
+
+    <h1 class="h3 mb-3 font-weight-normal">Please Sign up</h1>
+
+    <label for="username" class="sr-only">User Name</label>
+    <input
+      type="text"
+      id="inputUserName"
+      class="form-control"
+      formControlName="userName"
+      placeholder="User Name"
+      required
+      autofocus
+      #usernameSignup
+    />
+    <div
+      *ngIf="userName.invalid && (userName.dirty || userName.touched)"
+      class="alert alert-danger"
+    >
+      <div *ngIf="userName.errors.required">User Name is required.</div>
+      <div *ngIf="userName.errors.minlength">
+        User name must be at least 4 characters long.
+      </div>
+    </div>
+
+    <label for="email" class="sr-only">Email</label>
+    <input
+      type="email"
+      id="inputEmail"
+      class="form-control"
+      formControlName="email"
+      placeholder="Email"
+      required
+      autofocus
+      #emailSignup
+    />
+    <div
+      *ngIf="email.invalid && (email.dirty || email.touched)"
+      class="alert alert-danger"
+    >
+      <div *ngIf="email.errors.required">E-mail is required.</div>
+      <div *ngIf="email.errors.email">Please enter a valid email address.</div>
+    </div>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input
+      type="password"
+      id="inputPassword"
+      class="form-control"
+      formControlName="password"
+      placeholder="Password"
+      required
+      #passwordSignup
+    />
+    <div
+      *ngIf="password.invalid && (password.dirty || password.touched)"
+      class="alert alert-danger"
+    >
+      <div *ngIf="password.errors.required">Password is required.</div>
+      <div *ngIf="password.errors.minlength">
+        Password must be at least 6 characters long.
+      </div>
+    </div>
+    <label for="inputPassword" class="sr-only"> Re-enter Password</label>
+    <input
+      type="password"
+      id="RewritePassword"
+      class="form-control"
+      formControlName="rewritePass"
+      placeholder=" Re-enter Password"
+      required
+    />
+    <div
+      *ngIf="signUpForm.value.password !== signUpForm.value.rewritePass"
+      class="alert alert-danger"
+    >
+      Passwords didn't match.
+    </div>
+    <div class="checkbox mb-3">
+      <label> <input type="checkbox" value="remember-me" /> Remember me </label>
+    </div>
+
+    <a
+      class="btn btn-lg btn-block"
+      (click)="
+        onSignUp(usernameSignup.value, emailSignup.value, passwordSignup.value)
+      "
+      >Sign up</a
+    >
+    <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
+  </form>
+</div>
