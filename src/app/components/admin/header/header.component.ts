@@ -18,6 +18,11 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.getHeaderLang();
   }
+  changeLang(lang: any){
+    //console.log(event.target.value);
+    localStorage.setItem('lang',lang);
+    window.location.reload();
+  }
 
   getHeaderLang(){
     this.headerLang.getHeaderLang().subscribe(
@@ -31,4 +36,5 @@ export class HeaderComponent implements OnInit {
       }
     )
   }
+  
 }
