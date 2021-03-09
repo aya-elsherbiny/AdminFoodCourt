@@ -1,90 +1,107 @@
+<header>
+  <nav class="navbar navbar-expand-md bg-light fixed-top">
+    <div class="container-fluid d-flex">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#collapsibleNavbar"
+        style="color: #ffaf42"
+      >
+        <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
+      </button>
+      <a class="navbar-brand mr-auto pl-3" routerLink="/Home"
+        ><img src="assets/3.png" style="height: 40px; width: 70px"
+      /></a>
 
-    <header>
-      <nav class="navbar navbar-expand-md bg-light fixed-top">
-        <div class="container-fluid d-flex">
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#collapsibleNavbar"
-            style="color: #ffaf42"
-          >
-            <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
-          </button>
-          <a class="navbar-brand mr-auto pl-3" routerLink="/Home"
-            ><img src="assets/3.png" style="height: 40px; width: 70px"
-          /></a>
-    
-          <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav nav-pills nav-fill d-flex col-lg-12">
-              <li class="nav-item col-lg-3">
-                <a class="nav-link" aria-current="page" routerLink="/DashBoard">
-                  {{HeaderItems.dashboard}}
-                </a>
-              </li>
-              <!-- <li class="nav-item col-lg-3">
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav nav-pills nav-fill d-flex col-lg-12">
+          <li class="nav-item col-lg-3">
+            <a class="nav-link" aria-current="page" routerLink="/DashBoard">
+              {{ HeaderItems.dashboard }}
+            </a>
+          </li>
+          <!-- <li class="nav-item col-lg-3">
                 <a class="nav-link" aria-current="page" routerLink="/Home">
                   {{ HeaderItems.home }}
                 </a>
               </li> -->
-              <li class="nav-item col-lg-3">
-                <a class="nav-link" routerLink="/MenuParent">{{
-                  HeaderItems.menu
-                }}</a>
-              </li>
-              <li class="nav-item col-lg-3">
-                <a class="nav-link" routerLink="/Chefs">{{ HeaderItems.chefs }}</a>
-              </li>
-              <li class="nav-item col-lg-3">
-                <a class="nav-link" routerLink="/Offers">{{
-                  HeaderItems.offers
-                }}</a>
-              </li>
-              <li class="nav-item col-lg-3">
-                <a class="nav-link" routerLink="/Blog">{{ HeaderItems.blog }}</a>
-              </li>
-              
-              <li class="nav-item col-lg-3">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdownMenuLink"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  <i class="fa fa-user" style="font-size: x-large"></i>
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" routerLink="/LogIn">{{
+          <li class="nav-item col-lg-3">
+            <a class="nav-link" routerLink="/MenuParent">{{
+              HeaderItems.menu
+            }}</a>
+          </li>
+          <li class="nav-item col-lg-3">
+            <a class="nav-link" routerLink="/Chefs">{{ HeaderItems.chefs }}</a>
+          </li>
+          <li class="nav-item col-lg-3">
+            <a class="nav-link" routerLink="/Offers">{{
+              HeaderItems.offers
+            }}</a>
+          </li>
+          <li class="nav-item col-lg-3">
+            <a class="nav-link" routerLink="/Blog">{{ HeaderItems.blog }}</a>
+          </li>
+
+          <li class="nav-item col-lg-3">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <i class="fa fa-user" style="font-size: x-large"></i>
+            </a>
+
+            <div
+              *ngIf="isUserlogged; else login"
+              class="dropdown-menu"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <!-- <a class="dropdown-item" routerLink="/LogIn">{{
                     HeaderItems.login
-                  }}</a>
-                  <a class="dropdown-item">{{
+                  }}</a> -->
+              <a class="dropdown-item" (click)="logout()">{{
+                HeaderItems.logout
+              }}</a>
+            </div>
+
+            <ng-template #login>
+              <div
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <a class="dropdown-item" routerLink="/LogIn">{{
+                  HeaderItems.login
+                }}</a>
+                <!-- <a class="dropdown-item">{{
                     HeaderItems.logout
-                  }}</a>
-                </div>
-              </li>
-              <li class="nav-item col-lg-3">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdownMenuLink"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  {{ HeaderItems.lang }}
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" (click)="changeLang('en')">English</a>
-                  <a class="dropdown-item" (click)="changeLang('ar')">عربى</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-    
+                  }}</a> -->
+              </div>
+            </ng-template>
+          </li>
+          <li class="nav-item col-lg-3">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              {{ HeaderItems.lang }}
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" (click)="changeLang('en')">English</a>
+              <a class="dropdown-item" (click)="changeLang('ar')">عربى</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

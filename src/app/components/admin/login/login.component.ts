@@ -24,11 +24,12 @@ export class LoginComponent implements OnInit {
     if(localStorage.getItem('user') !== null){
       //console.log(this.user);
       this.isSignedIn = true;
+      this.route.navigate(['/DashBoard']);
 
     }
     else{
       this.isSignedIn = false;
-
+      
     }
 
     this.loginForm= new FormGroup({
@@ -47,7 +48,8 @@ export class LoginComponent implements OnInit {
       console.log(res);
       if(this.firebaseSignIn.isLoggedIn){
         this.isSignedIn = true;
-        this.route.navigate(['/DashBoard'])
+        //this.route.navigate(['/DashBoard'])
+        window.location.reload();
 
       }
       },(err)=>{
