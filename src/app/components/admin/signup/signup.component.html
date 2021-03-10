@@ -8,7 +8,7 @@
       height="75px"
     />
 
-    <h1 class="h3 mb-3 font-weight-normal">Please Sign up</h1>
+    <h4 class=" mb-3 font-weight-normal">Please Enter Your Data</h4>
 
     <label for="username" class="sr-only">User Name</label>
     <input
@@ -83,16 +83,14 @@
     >
       Passwords didn't match.
     </div>
-    <div class="checkbox mb-3">
-      <label> <input type="checkbox" value="remember-me" /> Remember me </label>
-    </div>
+    
 
     <a
       class="btn btn-lg btn-block"
       (click)="
         onSignUp(usernameSignup.value, emailSignup.value, passwordSignup.value)
       "
-      >Sign up</a
+      >Add Admin</a
     >
     <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
   </form>

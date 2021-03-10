@@ -1,29 +1,33 @@
 /*header*/
 
-.orange-color{
-    color: #FFAF42;
-    background-color: white;
-  }
-  .orange-color:hover{
-    color: darkorange;
-    background-color: black;
-  }
   
+.dropdown-menu a{
+    
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+}
+nav a{
+  color: #FFAF42;
+  font-family: 'Roboto', sans-serif;
+  transition: 0.5s;
+  transition-property:initial;
+}
+
+nav a:hover{
+  color: #fd8709;
   
-  .dropdown-menu a{
-    color: #FFAF42;
-  }
-  nav a{
-    color: #FFAF42;
-  }
-  
-  nav a:hover{
-    color: #212529;;
-  }
-  
-  .nav-pills .show > .nav-link {
-    background-color: #FFAF42;
-  }
-  a{
-    font-weight: 600;
-  }
+}
+nav a:focus { 
+  color: #fd5602 ; 
+  font-weight: bold;
+}
+
+.nav-pills .show > .nav-link {
+  background-color: white;
+  font-family: 'Roboto', sans-serif;
+}
+a{
+  //font-weight: 600;
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+}

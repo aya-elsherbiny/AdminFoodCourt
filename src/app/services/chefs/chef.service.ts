@@ -32,4 +32,17 @@ export class ChefService {
       description:chef.description
     })
    }
+  deleteChef(cID:number){
+    this.afs.collection("chefs").doc(localStorage.getItem("lang")||"en").collection(localStorage.getItem("lang")||"en").doc(`${cID}`).delete();
+  }
+  updateChef(chef:IChef){
+    // this.afs.doc(`meals/${meal.id}`).update(meal);
+    this.afs.collection("chefs").doc(localStorage.getItem("lang")||"en").collection(localStorage.getItem("lang")||"en").doc(`${chef.id}`).set({
+      id:Number(chef.id),
+      name:chef.name,
+      image:chef.image,
+      description:chef.description
+    }
+    )
+  }
 }

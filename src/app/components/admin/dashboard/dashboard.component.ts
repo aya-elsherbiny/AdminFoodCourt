@@ -17,6 +17,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllOrders();
+    console.log(localStorage.getItem('user'))
   }
   getAllOrders(){
     this.subscription = this.order.getAllOrders().subscribe(

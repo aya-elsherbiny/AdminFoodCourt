@@ -2,9 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddPostComponent } from './components/Blogg/add-post/add-post.component';
 import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
-import { HomeComponent } from './components/admin/home/home.component';
 import { LoginComponent } from './components/admin/login/login.component';
-import { OffersComponent } from './components/admin/offers/offers.component';
 import { BlogComponent } from './components/Blogg/blog/blog.component';
 import { ChefDishesComponent } from './components/chef/chef-dishes/chef-dishes.component';
 import { ChefProfileComponent } from './components/chef/chef-profile/chef-profile.component';
@@ -20,8 +18,6 @@ const routes: Routes = [
   {path: 'DashBoard', component:DashboardComponent},
   {path: 'Chefs', component:ChefsComponent},
   {path:'Profile/:cID',component:ChefProfileComponent},
-  {path: 'Offers', component:OffersComponent},
-  {path: 'Home', component:HomeComponent},
   {path:'LogIn', component:LoginComponent},
   {path:'Signup',component:SignupComponent},
   {path:'Dishes/:cID',component:ChefDishesComponent},

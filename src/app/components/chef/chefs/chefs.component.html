@@ -11,8 +11,13 @@
 
            <div class="img__wrap ">
             <img [src]="chef?.image">
-            <button type="button" class="btn btn-link  img__description" (click)="viewChef(chef.id)">Know them
-                    better</button>
+            <button type="button" class="btn btn-link  img__description">
+                <i class="fas fa-edit " (click)="setChef(chef)" 
+                data-toggle="modal" data-target="#updateModal" ></i>
+                <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+              <i class="fas fa-trash-alt " (click)="setChefID(chef.id)"
+              data-toggle="modal" data-target="#deleteModal"></i>
+            </button>
            </div>
               
             <div class="card-body  ">
@@ -23,4 +28,58 @@
         </div>
 
     </div>
+</div>
+
+<!---------------------- Modal For Updating A Post ----------------------------------------------------------------------------->
+<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle"> Edit The Post </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+              <label for="ID">ID: </label>
+              <input type="text" class="form-control" id="ID" [value]="updatedChef.id" readonly/>
+
+              <label for="Image">Image: </label>
+              <input type="text" class="form-control" id="Image" [value]="updatedChef.image" name="Image" [(ngModel)]="updatedChef.image"/>
+
+              <label for="Name">Name: </label>
+              <input type="text" class="form-control" id="Title" [value]="updatedChef.name" name="Name" [(ngModel)]="updatedChef.name"/>
+
+              <label for="Description">Description: </label>
+              <textarea class="form-control" id="Description" [value]="updatedChef.description" name="Description" [(ngModel)]="updatedChef.description"></textarea>
+          </form>
+        </div>
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn cont col-5"  data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn add col-5"  (click)="editChef()" data-dismiss="modal">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--------------------Modal For Deleting A Meal ----------------------------------------------------------------------------->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle"> Oh Hello There! </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete this chef ?
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button"  class="btn cont col-5" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn add col-5"(click)="deleteChef()" data-dismiss="modal">Delete</button>
+      </div>
+    </div>
+  </div>
 </div>

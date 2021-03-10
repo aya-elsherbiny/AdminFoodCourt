@@ -7,7 +7,6 @@ import { MenuParentComponent } from './components/menu/menu-parent/menu-parent.c
 import { MenuChildComponent } from './components/menu/menu-child/menu-child.component';
 import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
 import { HeaderComponent } from './components/admin/header/header.component';
-import { FooterComponent } from './components/admin/footer/footer.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { BlogComponent } from './components/Blogg/blog/blog.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -21,8 +20,6 @@ import { ChefProfileComponent } from './components/chef/chef-profile/chef-profil
 import { ChefDishesComponent } from './components/chef/chef-dishes/chef-dishes.component';
 import { ChefsComponent } from './components/chef/chefs/chefs.component';
 import { MealDetailsComponent } from './components/menu/meal-details/meal-details.component';
-import { HomeComponent } from './components/admin/home/home.component';
-import { OffersComponent } from './components/admin/offers/offers.component';
 import { LoginComponent } from './components/admin/login/login.component';
 
 import { AddMealComponent } from './components/menu/add-meal/add-meal.component'
@@ -38,15 +35,12 @@ import { SignupComponent } from './components/admin/signup/signup.component';
     MenuChildComponent,
     DashboardComponent,
     HeaderComponent,
-    FooterComponent,
     NotFoundComponent,
     BlogComponent,
     ChefProfileComponent,
     ChefDishesComponent,
     ChefsComponent,
     MealDetailsComponent,
-    HomeComponent,
-    OffersComponent,
     LoginComponent,
     AddPostComponent,
     AddMealComponent,
