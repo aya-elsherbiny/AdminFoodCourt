@@ -6,7 +6,7 @@
                 Add New Chef</a>
         </div>
         
-        <div class="shadow rounded card text-left col-3 card-light p-0 " style="margin-right: 20px; margin-bottom: 20px;"
+        <div class="shadow rounded card text-left col-sm-10 col-xs-12 col-xl-3 col-lg-4 col-md-4 card-light p-0 " style="margin-right: 20px; margin-bottom: 20px;"
             *ngFor="let chef of ChefList">
 
            <div class="img__wrap ">
@@ -20,7 +20,7 @@
             </button>
            </div>
               
-            <div class="card-body  ">
+            <div class="card-body  text-center">
                 <h3 class="chefN">{{chef?.name}}</h3>
                 <p>{{chef?.description}}</p>
                 

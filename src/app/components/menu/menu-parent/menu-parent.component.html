@@ -11,7 +11,7 @@
 </div>
 
   <!-- Filling the dropdown list with category names from the database -->
-  <div class="d-flex flex-row container justify-content-between" style="margin-top:50px">
+  <div class="d-flex flex-row container justify-content-between flex-wrap" style="margin-top:50px">
       <button class="btn CatBtn rounded-pill active" *ngFor="let cat of CategoryList" (click)="setCatID(cat.id)">
         {{cat.name}}
       </button>
