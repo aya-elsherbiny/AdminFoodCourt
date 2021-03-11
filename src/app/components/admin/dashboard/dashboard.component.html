@@ -68,6 +68,8 @@
                             <th>Meal Name</th>
                             <th>Meal Count</th>
                             <th>Meal Price</th>
+                            <th>Date</th>
+                            <th>Payment Method</th>
                             <th>User ID</th>
                         </tr>
                     </thead>
@@ -77,6 +79,8 @@
                             <td>{{order.mealName}}</td>
                             <td>{{order.mealCount}}</td>
                             <td>{{order.mealPrice | currency: 'EGP'}}</td>
+                            <td>{{order.date.toDate()|date:'dd/MM/yyyy '}}</td>
+                            <td>{{order.option}}</td>
                             <td>{{order.userID}}</td>
                         </tr>
                     </tbody>
