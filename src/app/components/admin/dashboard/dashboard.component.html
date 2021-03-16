@@ -58,8 +58,10 @@
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-
+            
             <h2>Orders Details</h2>
+                
+            
             <div class="table-responsive">
                 <table class="table table-striped table-sm">
                     <thead>
@@ -67,8 +69,8 @@
                             <th>#</th>
                             <th>Meal Name</th>
                             <th>Meal Count</th>
-                            <th>Meal Price</th>
-                            <th>Date</th>
+                            <th>Unit Price</th>
+                            <!-- <th>Date</th> -->
                             <th>Payment Method</th>
                             <th>User ID</th>
                         </tr>
@@ -79,7 +81,7 @@
                             <td>{{order.mealName}}</td>
                             <td>{{order.mealCount}}</td>
                             <td>{{order.mealPrice | currency: 'EGP'}}</td>
-                            <td>{{order.date.toDate()|date:'dd/MM/yyyy '}}</td>
+                            <!-- <td>{{order.date.toDate()|date:'dd/MM/yyyy '}}</td> -->
                             <td>{{order.option}}</td>
                             <td>{{order.userID}}</td>
                         </tr>
